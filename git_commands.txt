@@ -1,0 +1,72 @@
+================================================================================
+                    GIT WORKFLOW COMMAND DOCUMENTATION
+                     Assignment Question 1 - Step 6
+================================================================================
+
+1. git init -b main
+   Initializes a new Git repository in the current project directory, setting 'main' as the default initial branch.
+
+2. git status
+   Displays the current state of the working directory and staging area, listing untracked, modified, or staged files.
+
+3. git add index.html about.html
+   Stages the specified HTML files, adding their current content to the Git staging index for the next commit.
+
+4. git commit -m "Initial commit: Add index.html and about.html"
+   Records a permanent snapshot of the staged files to the repository history with an explanatory message.
+
+5. git add index.html
+   Stages the updated index.html file after modifying its structure with the login form section.
+
+6. git commit -m "Update index.html: Add login form structure"
+   Records the second commit on the main branch capturing the modifications to index.html.
+
+7. git branch feature
+   Creates a new branch named 'feature' pointing to the current commit on the main branch.
+
+8. git checkout feature
+   Switches the working directory and HEAD pointer to the newly created 'feature' branch.
+   (Alternative modern syntax: git switch feature)
+
+9. git add about.html
+   Stages the modified about.html file containing new feature descriptions and specifications on the feature branch.
+
+10. git commit -m "Feature: Add key system features and security specifications to about.html"
+    Commits the feature modifications exclusively to the 'feature' branch history without altering main.
+
+11. git checkout main
+    Switches the active working branch and HEAD pointer back to the 'main' branch.
+    (Alternative modern syntax: git switch main)
+
+12. git merge --no-ff feature -m "Merge branch 'feature' into main"
+    Merges the 'feature' branch into 'main' using the --no-ff flag to explicitly preserve branch topology and commit history.
+
+13. git log --graph --oneline --all --decorate
+    Displays a visual ASCII graph of all branches and commits in single-line format, showing complete branch history.
+
+14. git add .gitignore
+    Stages the .gitignore configuration file configured to exclude all *.log files and the temp/ directory.
+
+15. git commit -m "Configure .gitignore to exclude *.log files and temp/ directory"
+    Commits the .gitignore file into the repository to enforce file exclusion rules across environments.
+
+16. git commit -m "Temp: Add experimental footer to test undo operation"
+    Creates an additional test commit to demonstrate undo operations in Git.
+
+17. git reset HEAD~1
+    Undoes the most recent commit by moving HEAD back one commit, while preserving changes in the working directory as unstaged.
+
+18. git restore index.html
+    Discards uncommitted working tree modifications, reverting index.html back to its last committed state.
+
+19. git remote add origin https://github.com/<username>/<repo-name>.git
+    Associates the local Git repository with a remote repository hosted on GitHub under the alias 'origin'.
+
+20. git branch -M main
+    Ensures the current active branch is explicitly named 'main' prior to pushing to GitHub.
+
+21. git push -u origin main
+    Uploads all local commits on branch 'main' to the remote GitHub repository and establishes upstream branch tracking.
+
+22. git push -u origin feature
+    Pushes the 'feature' branch to GitHub so instructors can verify both branches and their commit histories remotely.
